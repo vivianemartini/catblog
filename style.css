@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62,5%;
+
+    --white:hsl(0, 0%, 100%);
+    --blue-300: hsl(195, 46%, 40%);
+    --blue-600: #065d7a;
+
+    --gray-700: #121214;
+    --gray-800: #202024;
+}
+
+html, body ,input {
+    font-family: 'Mulish', sans-serif;
+}
+
+
+main {
+    max-width: 32rem;
+    margin-inline: auto;
+    padding: 5.6rem 4rem;
+    box-sizing: content-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+main {
+    background-color: var(--white);
+}
+
+.container {
+    padding: 1.6rem 3.2rem;
+    width: min(112rem, 100%);
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5rem;
+    font-weight: 600;
+    background-color: var(--blue-600);
+}
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+}
+
+header form {
+    flex: 1;
+}
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 1.6rem;
+    background-color: var(--blue-300);
+    border: 0;
+    border-radius: .4rem;
+
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.input-wrapper input::placeholder,
+.input-wrapper input:focus  {
+    color: var(--white);
+}
+
+.avatar {
+    width: 4.4rem;
+    height: 4.4rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.title-container {
+    width: 34.5rem;
+    height: 8rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--gray-800);
+}
+
+.emoji-container {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.emoji-container span{
+    padding: 1.4rem;
+}
+
+.emoji {
+    background-color: var(--blue-600);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.emoji:hover {
+    background-color: #45b7dd;
+}
+
+.emoji img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+
+article {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--gray-700);
+    line-height: 2.5rem;
+
+    margin-top: 4.3rem;
+    width: 38.2rem;
+}
+
+footer {
+    background-color: var(--blue-600);
+    text-align: center;
+    padding: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+}
