@@ -19,48 +19,33 @@
     --gray-800: #202024;
 }
 
-html, body ,input {
+*, html, body, input {
     font-family: 'Mulish', sans-serif;
 }
 
-
-main {
-    max-width: 32rem;
-    margin-inline: auto;
-    padding: 5.6rem 4rem;
-    box-sizing: content-box;
-
-    display: flex;
-    flex-direction: column;
-    gap: 3.2rem;
-}
-
-main {
-    background-color: var(--white);
-}
-
-.container {
-    padding: 1.6rem 3.2rem;
-    width: min(112rem, 100%);
+/* body {
+    display: grid;
+    grid-template-rows: max-content 1fr 1fr max-content;
+    max-width: 100%;
     margin: 0 auto;
 }
-
-header {
+ */
+ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 5rem;
     font-weight: 600;
     background-color: var(--blue-600);
 }
 
-.logo {
-    width: 4rem;
-    height: 4rem;
+.container {
+    padding: 12px 28px;
+    width: min(112rem, 100%);
 }
 
-header form {
-    flex: 1;
+.logo {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .input-wrapper label {
@@ -72,12 +57,12 @@ header form {
 
 .input-wrapper input {
     width: 100%;
-    padding: 1.6rem;
+    padding: 12px 160px 12px 14px;
     background-color: var(--blue-300);
     border: 0;
     border-radius: .4rem;
 
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 
@@ -87,11 +72,28 @@ header form {
 }
 
 .avatar {
-    width: 4.4rem;
-    height: 4.4rem;
+    width: 2.6rem;
+    height: 2.6rem;
 
     object-fit: cover;
     border-radius: 50%;
+}
+
+main {
+    max-width: 46rem;
+    box-sizing: content-box;
+
+    gap: 3.2rem;
+    background-color: var(--white);
+}
+
+main img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.text-container {
+    padding: 1rem 3rem;
 }
 
 .title-container {
@@ -103,9 +105,22 @@ header form {
 }
 
 h2 {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--gray-800);
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.6rem;
+}
+
+p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.4rem;
 }
 
 .emoji-container {
@@ -115,7 +130,7 @@ h2 {
 }
 
 .emoji-container span{
-    padding: 1.4rem;
+    padding: .8rem;
 }
 
 .emoji {
@@ -125,29 +140,124 @@ h2 {
 }
 
 .emoji:hover {
-    background-color: #45b7dd;
+    background-color: #387E96;
 }
 
 .emoji img {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1rem;
+    height: 1rem;
 }
 
+.second-container {
+ grid-column-start: 1;
+ grid-column-end: 4;
+}
+
+.second-container h2 {
+    padding: 0rem 3rem;
+}
+
+.article-cont {
+    display: flex;
+    gap: 20px;
+    width: 382px;
+}
+ 
+.article-cont img {
+    width: 151px;
+    height: 84px;
+}
+
+.inside-info {
+    display: flex;
+    flex-direction: column;
+}
 
 article {
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 400;
     color: var(--gray-700);
-    line-height: 2.5rem;
-
-    margin-top: 4.3rem;
-    width: 38.2rem;
+    line-height: 1.6rem;
 }
 
 footer {
     background-color: var(--blue-600);
     text-align: center;
-    padding: 1.6rem;
+    padding: 1rem;
     font-weight: 600;
     color: var(--white);
 }
+
+@media (min-width: 760px) {
+
+    #app {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "A  A A"
+        "B  B C"
+        "B  B C"
+        "F  F F";
+    
+    }
+    #app header {
+        grid-area: A;
+        justify-content: center;
+        gap: 20px;
+    }
+    .input-wrapper input {
+        width: 980px;
+    }
+
+    #app main  {
+        grid-area: B;
+        height: 100%;
+        width: 80rem;
+        justify-self: right;
+        margin-top: 1rem;
+    }
+
+    main img {
+        width: 685px;
+        height: 405px;
+    }
+
+    .text-container {
+        padding: 0px;
+    }
+    .title-container {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 3rem;
+        width: 685px;
+    }
+
+    .emoji-container span {
+        padding: 0.6rem;
+        margin-bottom: 10px;
+    }
+    
+    article {
+        margin-top: 2rem;
+        width: 685px;
+        margin-bottom: 3rem;
+    }
+    #app aside {
+        grid-area: C;
+       justify-self:left;
+       margin-top: 1.5rem;
+
+       display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+
+    .second-container h2 {
+        padding: 1rem 0rem;
+    }
+
+    #app footer {
+        grid-area: F;
+    }
+}  
