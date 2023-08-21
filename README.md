@@ -11,4 +11,3 @@ A ideia agora é criar o Blog de Gatos! 🐈‍
 - Grid;
 - Variáveis no CSS;
 - Cores HSL;
-- Animações e transições simples.
